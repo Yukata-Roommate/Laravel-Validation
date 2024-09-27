@@ -271,7 +271,7 @@ class ValidationRules extends LaravelRules implements ValidationRulesInterface
     public function existsNotDeleted(string $table, string|null $column = null, string $deletedAtColumn = "deleted_at", string|null $message = null): static
     {
         return $this->exists($table, $column, function (Exists $rule) use ($deletedAtColumn) {
-            $rule->whereNull($deletedAtColumn);
+            return $rule->whereNull($deletedAtColumn);
         }, $message);
     }
 
@@ -288,7 +288,7 @@ class ValidationRules extends LaravelRules implements ValidationRulesInterface
     public function existsDeleted(string $table, string|null $column = null, string $deletedAtColumn = "deleted_at", string|null $message = null): static
     {
         return $this->exists($table, $column, function (Exists $rule) use ($deletedAtColumn) {
-            $rule->whereNotNull($deletedAtColumn);
+            return $rule->whereNotNull($deletedAtColumn);
         }, $message);
     }
 
@@ -347,7 +347,7 @@ class ValidationRules extends LaravelRules implements ValidationRulesInterface
     public function uniqueNotDeleted(string $table, string|null $column = null, string $deletedAtColumn = "deleted_at", string|null $message = null): static
     {
         return $this->unique($table, $column, function (Unique $rule) use ($deletedAtColumn) {
-            $rule->whereNull($deletedAtColumn);
+            return $rule->whereNull($deletedAtColumn);
         }, $message);
     }
 
@@ -364,7 +364,7 @@ class ValidationRules extends LaravelRules implements ValidationRulesInterface
     public function uniqueDeleted(string $table, string|null $column = null, string $deletedAtColumn = "deleted_at", string|null $message = null): static
     {
         return $this->unique($table, $column, function (Unique $rule) use ($deletedAtColumn) {
-            $rule->whereNotNull($deletedAtColumn);
+            return $rule->whereNotNull($deletedAtColumn);
         }, $message);
     }
 
@@ -381,7 +381,7 @@ class ValidationRules extends LaravelRules implements ValidationRulesInterface
     public function uniqueIgnore(string $table, string|null $column = null, mixed $ignore = null, string $ignoreColumn = "id", string|null $message = null): static
     {
         return $this->unique($table, $column, function (Unique $rule) use ($ignore, $ignoreColumn) {
-            $rule->ignore($ignore, $ignoreColumn);
+            return $rule->ignore($ignore, $ignoreColumn);
         }, $message);
     }
 
@@ -405,7 +405,7 @@ class ValidationRules extends LaravelRules implements ValidationRulesInterface
         string|null $message = null
     ): static {
         return $this->unique($table, $column, function (Unique $rule) use ($ignore, $ignoreColumn, $deletedAtColumn) {
-            $rule->ignore($ignore, $ignoreColumn)->whereNull($deletedAtColumn);
+            return $rule->ignore($ignore, $ignoreColumn)->whereNull($deletedAtColumn);
         }, $message);
     }
 
@@ -429,7 +429,7 @@ class ValidationRules extends LaravelRules implements ValidationRulesInterface
         string|null $message = null
     ): static {
         return $this->unique($table, $column, function (Unique $rule) use ($ignore, $ignoreColumn, $deletedAtColumn) {
-            $rule->ignore($ignore, $ignoreColumn)->whereNotNull($deletedAtColumn);
+            return $rule->ignore($ignore, $ignoreColumn)->whereNotNull($deletedAtColumn);
         }, $message);
     }
 }
