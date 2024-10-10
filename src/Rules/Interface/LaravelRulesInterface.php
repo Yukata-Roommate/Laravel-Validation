@@ -1,13 +1,13 @@
 <?php
 
-namespace YukataRm\Laravel\Validation\Interface;
+namespace YukataRm\Laravel\Validation\Rules\Interface;
 
-use YukataRm\Laravel\Validation\Interface\BaseRulesInterface;
+use YukataRm\Laravel\Validation\Rules\Interface\BaseRulesInterface;
 
 /**
  * Laravel Validation Rules Interface
  * 
- * @package YukataRm\Laravel\Validation\Interface
+ * @package YukataRm\Laravel\Validation\Rules\Interface
  */
 interface LaravelRulesInterface extends BaseRulesInterface
 {

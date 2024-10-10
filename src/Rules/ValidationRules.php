@@ -2,7 +2,7 @@
 
 namespace YukataRm\Laravel\Validation\Rules;
 
-use YukataRm\Laravel\Validation\Interface\ValidationRulesInterface;
+use YukataRm\Laravel\Validation\Rules\Interface\ValidationRulesInterface;
 use YukataRm\Laravel\Validation\Rules\LaravelRules;
 
 use Illuminate\Validation\Rules\Exists;

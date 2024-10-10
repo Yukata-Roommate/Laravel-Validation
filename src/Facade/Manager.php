@@ -2,7 +2,7 @@
 
 namespace YukataRm\Laravel\Validation\Facade;
 
-use YukataRm\Laravel\Validation\Interface\ValidationRulesInterface;
+use YukataRm\Laravel\Validation\Rules\Interface\ValidationRulesInterface;
 use YukataRm\Laravel\Validation\Rules\ValidationRules;
 
 /**
@@ -16,7 +16,7 @@ class Manager
      * make Rules instance
      *
      * @param string $key
-     * @return \YukataRm\Laravel\Validation\Interface\ValidationRulesInterface
+     * @return \YukataRm\Laravel\Validation\Rules\Interface\ValidationRulesInterface
      */
     public function make(string $key): ValidationRulesInterface
     {
@@ -28,7 +28,7 @@ class Manager
      * 
      * @param string $name
      * @param array<mixed> $arguments
-     * @return \YukataRm\Laravel\Validation\Interface\ValidationRulesInterface
+     * @return \YukataRm\Laravel\Validation\Rules\Interface\ValidationRulesInterface
      */
     public function __call(string $name, array $arguments): ValidationRulesInterface
     {
