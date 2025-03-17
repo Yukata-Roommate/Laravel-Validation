@@ -1,0 +1,38 @@
+{
+    "name": "yukata-roommate/laravel-validation",
+    "description": "Easy to validate contents in Laravel",
+    "version": "1.0.0",
+    "keywords": [
+        "yukata-roommate",
+        "php",
+        "laravel",
+        "package",
+        "validation",
+        "laravel-validation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yukata Roommate"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "YukataRm\\Laravel\\Validation\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YukataRm\\Laravel\\Validation\\ServiceProvider"
+            ],
+            "aliases": {
+                "Rules": "YukataRm\\Laravel\\Validation\\Facades\\Rules"
+            }
+        }
+    },
+    "require": {
+        "php": ">=8.3.0",
+        "laravel/framework": "^11.0 || ^12.0"
+    }
+}
